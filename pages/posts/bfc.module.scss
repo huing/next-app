@@ -1,0 +1,14 @@
+.outer {
+    height: 100px;
+}
+.left {
+    float: left;
+    width: 200px;
+    background: #0070f3;
+    height: 100%;
+}
+.right {
+    background: aquamarine;
+    height: 100%;
+    overflow: auto;
+}

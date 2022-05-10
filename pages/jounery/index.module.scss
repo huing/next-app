@@ -1,0 +1,26 @@
+.section {
+  position: relative;
+  &::after {
+    content: "x";
+    position: absolute;
+    left: 600px;
+    bottom: 20px;
+  }
+  &::before {
+    content: "Y";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+}
+.canvas {
+  margin: 30px;
+  border: 1px solid black;
+}
+.sectionTable {
+  background: 0 -100px repeat-x url(https://mdn.mozillademos.org/files/5415/bg_gallery.png) #4F191A;
+  margin: 10px;
+  > img {
+    padding: 60px 10px;
+  }
+}

@@ -20,3 +20,21 @@ console.log(equal);
 // 转为整数（大数）运算
 // 使用 Number.EPSILON 误差范围
 // 转成字符串，对字符串做加法运算
+
+/*
+ * bind
+ * */
+function add1(...args) {
+  // 这种写法污染原型链
+  add1.__proto__.value = args.reduce((acc, cur) => acc + cur, 0);
+  return add1.bind(this, ...args);
+}
+function add4(...arg) {
+  const fn = add4.bind(this, ...arg);
+  fn.value = arg.reduce((a, b) => a + b, 0);
+  return fn;
+}
+console.log(add1(1)(2)(3)(4)(5).value);
+console.log(add1(1, 2, 3, 4)(5).value);
+console.log(add4(1)(2)(3)(4)(5).value);
+console.log(add4(1, 2, 3, 4)(5).value);

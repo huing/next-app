@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import data from "../../method/data";
-import dfs from "../../method/dfs";
-import flat from "../../method/flat";
+import data from "../../lib/data";
+import dfs from "../../lib/dfs";
+import flat from "../../lib/flat";
 import styles from "./index.module.scss";
 
 type PropsDTO = Record<string, any>;

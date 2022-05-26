@@ -4,7 +4,7 @@
  * 函数作用域
  * 块级作用域
  * 声明提升
- *
+ * const let var 区别
  * */
 var a = 11;
 let b = 21;
@@ -40,18 +40,10 @@ A();
  * 不能 new 没有构造函数 constructor
  * 没有 arguments
  * 不能用 bind 改变 this
- *
  * */
 const normal = {
   name: "普通函数",
   getName: function () {
-    console.log(this);
-    setTimeout(function () {
-      console.log(this.name);
-    }, 10);
-  },
-  getName1: () => {
-    console.log(this);
     setTimeout(function () {
       console.log(this.name);
     }, 10);
@@ -67,6 +59,5 @@ const arrow = {
   },
 };
 
-normal.getName1();
 normal.getName();
 arrow.getName();

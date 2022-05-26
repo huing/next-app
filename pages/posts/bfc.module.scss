@@ -1,14 +1,46 @@
 .outer {
-    height: 100px;
+  height: 100px;
 }
 .left {
-    float: left;
-    width: 200px;
-    background: #0070f3;
-    height: 100%;
+  float: left;
+  width: 200px;
+  background: #0070f3;
+  height: 100%;
 }
 .right {
-    background: aquamarine;
-    height: 100%;
-    overflow: auto;
+  background: aquamarine;
+  height: 100%;
+  overflow: auto;
+}
+/*
+ 这里声明就是全局变量
+ $size: 10px;
+ */
+
+.common_border {
+  /* 这里声明就是局部变量 */
+  $size: 10px;
+  $bgColor: rgba(0, 255, 255, 0.1);
+  width: 200px;
+  height: 100px;
+  margin: 30px;
+  overflow: hidden;
+  //padding: 30px;
+  //& > div {
+  //  overflow: hidden;
+  //}
+  &:nth-child(1) {
+    border: $size solid red;
+    background-color: $bgColor;
+    margin-bottom: -150px;
+  }
+  &:nth-child(2) {
+    outline: $size solid rgba(170, 50, 220, 0.6);
+    background-color: $bgColor;
+  }
+  &:nth-child(3) {
+    //  可以多个，逗号分割
+    box-shadow: 0 0 0 $size #f4aab9, 0 0 0 $size * 2 #66ccff;
+    background-color: $bgColor;
+  }
 }

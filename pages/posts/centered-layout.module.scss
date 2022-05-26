@@ -1,0 +1,19 @@
+.line_height {
+  line-height: 60px;
+  height: 60px;
+  background-color: aquamarine;
+}
+.transform {
+  height: 60px;
+  background-color: #f4aab9;
+  & > div {
+    height: 40px;
+    background-color: #0070f3;
+    position: relative;
+    //  给百分比
+    top: 50%;
+    transform: translateY(-50%);
+    //    可以给个固定值
+    //    top: 10px;
+  }
+}

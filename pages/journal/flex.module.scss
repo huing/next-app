@@ -1,0 +1,41 @@
+.container {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.left_grow {
+  flex: 1 2 300px;
+  background: red;
+}
+.right_grow {
+  flex: 2 1 200px;
+  background: blue;
+  //max-width: 220px;
+}
+.left_grow_1 {
+  flex: 0.1 2 300px;
+  background: red;
+}
+.right_grow_1 {
+  flex: 0.2 1 200px;
+  background: blue;
+}
+.left_shrink {
+  flex: 1 2 500px;
+  background: red;
+}
+.right_shrink {
+  flex: 2 1 400px;
+  background: blue;
+}
+.left_shrink_1 {
+  flex: 1 0.2 500px;
+  background: red;
+}
+.right_shrink_1 {
+  flex: 2 0.1 400px;
+  background: blue;
+  //min-width: 380px;
+  //min-width: 400px;
+}

@@ -1,6 +1,5 @@
 import React, { memo, useCallback, useMemo, useState } from "react";
 import { useFetch } from "../../lib/useFetch";
-import { log } from "util";
 
 function Swatch({ color }: { color: string }) {
   console.log(`Swatch rendered ${color}`);
@@ -64,6 +63,8 @@ function App() {
         {/*<MemoedSwatch2 params={params} onClick={() => {}} />*/}
         {/* onClick useCallback ok */}
         <MemoedSwatch2 params={params} onClick={onClick} />
+
+        {/*<Swatch1 params={params} onClick={onClick} />*/}
 
         <div>Hello, {JSON.stringify(data)}</div>
         <div>

@@ -7,3 +7,9 @@
 [submodule "blog/themes/stack"]
 	path = blog/themes/stack
 	url = https://github.com/CaiJimmy/hugo-theme-stack.git
+[submodule "blog/themes/papermod"]
+	path = blog/themes/papermod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "blog/themes/even"]
+	path = blog/themes/even
+	url = https://github.com/olOwOlo/hugo-theme-even

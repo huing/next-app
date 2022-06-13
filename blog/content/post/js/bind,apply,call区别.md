@@ -1,6 +1,8 @@
 ---
 title: "Bind,apply,call区别"
 date: 2022-06-13T11:41:34+08:00
+categories: ["js"]
+tags: ["js"]
 draft: false
 ---
 

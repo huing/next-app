@@ -27,3 +27,26 @@ git clone git@github.com:huing/next-app.git
 git submodule init
 git submodule update
 ```
+
+### blog 用法
+
+#### start the hugo server
+
+```
+cd blog
+hugo server -D
+```
+
+#### build static pages
+
+```
+cd blog
+hugo -D
+```
+
+#### publish
+
+```
+cd blog/public
+git push
+```

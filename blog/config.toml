@@ -2,7 +2,17 @@ baseURL = 'https://blog.promiseme.site/'
 languageCode = 'en-us'
 title = 'My Site'
 
+[params]
+  # defaultTheme = "auto"
+  # ShowToc = true
+  ShowBreadCrumbs = true
+  # ShowPostNavLinks = true
+
 # theme = 'ananke'
-theme = 'PaperMod'
+theme = 'papermod'
+
+# disableLiveReload = true
 
 # contentdir = "../mycontent"
+
+# ignoreFiles = ['\.foo$', '\.boo$']

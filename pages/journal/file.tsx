@@ -27,11 +27,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 // 切片大小
-const SIZE = 1024 * 1024;
+const SIZE = 10 * 1024 * 1024;
 
-const request = ({ url, method = "post", data, headers = {}, requestList }: any) => {
+const request = ({ url, method = "post", data, headers = {}, onProgress }: any) => {
   return new Promise(resolve => {
     const xhr = new XMLHttpRequest();
+    xhr.upload.onprogress = onProgress;
     xhr.open(method, url);
     Object.keys(headers).forEach(key => {
       xhr.setRequestHeader(key, headers[key]);
@@ -62,12 +63,14 @@ const File: NextPage<{}> = (props: InferGetStaticPropsType<typeof getStaticProps
   // console.log("Journal", props);
   const [files, setFiles] = useState<any>();
   const videoRef: any = useRef(null);
+  const [data, setData] = useState<any[]>([]);
+  const [percentageList, setPercentageList] = useState<number[]>([]);
 
   useEffect(() => {}, []);
 
   // 上传切片
-  const uploadChunks = async (fileChunkList: { chunk: Blob; hash: string }[]) => {
-    const requestList = fileChunkList.map(({ chunk, hash }) => {
+  const uploadChunks = async (fileChunkList: { chunk: Blob; hash: string }[], createProgressHandler: any) => {
+    const requestList = fileChunkList.map(({ chunk, hash }, index) => {
       const formData = new FormData();
       formData.append("chunk", chunk);
       formData.append("hash", hash);
@@ -75,6 +78,7 @@ const File: NextPage<{}> = (props: InferGetStaticPropsType<typeof getStaticProps
       return request({
         url: "http://localhost:3000/upload",
         data: formData,
+        onProgress: createProgressHandler(index),
       });
     });
     await Promise.all(requestList);
@@ -88,18 +92,33 @@ const File: NextPage<{}> = (props: InferGetStaticPropsType<typeof getStaticProps
     });
     console.log(res);
   };
+
   const handleUpload = async () => {
     if (!files) return;
     const fileChunkList = createFileChunk(files).map(({ file }, index) => ({
       chunk: file,
       hash: `${files.name}-${index}`,
+      percentage: 0,
     }));
-    await uploadChunks(fileChunkList);
+
+    setPercentageList(new Array(fileChunkList.length).fill(0));
+    await uploadChunks(fileChunkList, (index: number) => (e: any) => {
+      setPercentageList(pre => {
+        pre[index] = parseInt(String((e.loaded / e.total) * 100));
+        return [...pre];
+      });
+      setData(() => {
+        fileChunkList[index].percentage = parseInt(String((e.loaded / e.total) * 100));
+        return [...fileChunkList];
+      });
+    });
   };
   const handleFileChange = (e: any) => {
     setFiles(e.target.files[0]);
     getVideoInfo(e.target.files[0], videoRef.current);
   };
+  // console.log(data.map(item => item.percentage));
+  // console.log(percentageList);
   return (
     <div>
       <Head>
@@ -107,6 +126,11 @@ const File: NextPage<{}> = (props: InferGetStaticPropsType<typeof getStaticProps
       </Head>
       <div>
         <input type={"file"} accept={"video/mp4"} onChange={handleFileChange} />
+        {data.map((item, index) => (
+          <div key={item.hash}>
+            <progress key={item.hash} max={100} value={percentageList[index]} />
+          </div>
+        ))}
         <button onClick={handleUpload}>upload</button>
       </div>
       <video ref={videoRef} width={600} style={{ aspectRatio: "16 / 9", backgroundColor: "black" }} controls={true} />

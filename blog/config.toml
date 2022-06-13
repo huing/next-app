@@ -1,0 +1,8 @@
+baseURL = 'https://blog.promiseme.site/'
+languageCode = 'en-us'
+title = 'My Site'
+
+# theme = 'ananke'
+theme = 'PaperMod'
+
+# contentdir = "../mycontent"

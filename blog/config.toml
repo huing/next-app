@@ -9,7 +9,7 @@ title = 'My Site'
   # ShowPostNavLinks = true
 
 # theme = 'ananke'
-theme = 'papermod'
+# theme = 'papermod'
 
 # disableLiveReload = true
 

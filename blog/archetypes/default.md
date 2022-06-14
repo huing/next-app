@@ -5,7 +5,7 @@ lastmod: {{ .Date }}
 draft: false
 keywords: []
 description: ""
-tags: []
-categories: []
+tags: ["typescript", "ts", "react", "css", "javascript", "js"]
+categories: ["typescript", "react", "javascript"]
 author: "huing"
 ---

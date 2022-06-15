@@ -14,7 +14,7 @@ author: "huing"
 
 常量断言 const assertions
 
-# 数组转 type
+### 数组转 type
 
 ```javascript
 const animals = ['cat', 'dog', 'mouse'] as const
@@ -24,7 +24,7 @@ type Animal = typeof animals[number]
 // type Animal = 'cat' | 'dog' | 'mouse'
 ```
 
-# 数组对象转 type
+### 数组对象转 type
 
 ```javascript
 const animals = [
@@ -40,7 +40,7 @@ type Animal = (typeof animals)[number]["species"];
 // type Animal = "cat" | "dog" | "mouse"
 ```
 
-# 对象转 type
+### 对象转 type
 
 取 key
 

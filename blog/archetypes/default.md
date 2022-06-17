@@ -6,6 +6,6 @@ draft: false
 keywords: []
 description: ""
 tags: ["typescript", "ts", "react", "css", "javascript", "js"]
-categories: ["typescript", "react", "javascript"]
+categories: []
 author: "huing"
 ---

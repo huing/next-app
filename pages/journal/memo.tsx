@@ -28,10 +28,14 @@ function App() {
 
   const [url, setUrl] = useState("");
 
-  // 直接写url,deps依赖options 会触发useFetch一直更新，{url}对象引用，每次的options都不同
+  /**
+   * 直接写url,deps依赖options 会触发useFetch一直更新，{url}对象引用，每次的options都不同
+   */
   // const { data } = useFetch({ url });
 
-  // 适用变量名每次的option都是同一个引用，不会重复触发deps更新
+  /**
+   * 适用变量名每次的option都是同一个引用，不会重复触发deps更新
+   */
   // const myOptions = useMemo(() => ({ url }), [url]);
   // const { data } = useFetch(myOptions);
 
@@ -51,17 +55,29 @@ function App() {
         <button onClick={() => setColor(color === "red" ? "blue" : "red")}>Change Color</button>
       </div>
       <div>
-        {/* 啥也不用 */}
+        {/**
+         *  啥也不用
+         *  */}
         {/*<Swatch color={color} />*/}
-        {/* 用memo */}
+        {/***
+         *  用memo
+         * */}
         {/*<MemoedSwatch color={color} />*/}
-        {/* object作为参数 */}
+        {/**
+         * object作为参数
+         *  */}
         {/*<MemoedSwatch1 params={{ color }} />*/}
-        {/* object作为参数 useMemo */}
+        {/**
+         *  object作为参数 useMemo
+         * */}
         {/*<MemoedSwatch2 params={params} />*/}
-        {/* onClick 会重新触发渲染 */}
+        {/**
+         *  onClick 会重新触发渲染
+         * */}
         {/*<MemoedSwatch2 params={params} onClick={() => {}} />*/}
-        {/* onClick useCallback ok */}
+        {/**
+         * onClick useCallback ok
+         * */}
         <MemoedSwatch2 params={params} onClick={onClick} />
 
         {/*<Swatch1 params={params} onClick={onClick} />*/}

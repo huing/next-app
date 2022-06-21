@@ -78,9 +78,9 @@ function App() {
         {/**
          * onClick useCallback ok
          * */}
-        <MemoedSwatch2 params={params} onClick={onClick} />
+        {/* <MemoedSwatch2 params={params} onClick={onClick} /> */}
 
-        {/*<Swatch1 params={params} onClick={onClick} />*/}
+        <Swatch1 params={params} onClick={onClick} />
 
         <div>Hello, {JSON.stringify(data)}</div>
         <div>

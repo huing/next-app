@@ -1,5 +1,4 @@
 // https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/
-// https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/submissions/
 
 var minArray = function (numbers, target) {
   let left = 0;

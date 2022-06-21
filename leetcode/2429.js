@@ -1,5 +1,8 @@
 // https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/
-
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 var missingNumber = function (nums) {
   let left = 0;
   let right = nums.length - 1;

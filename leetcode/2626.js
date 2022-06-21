@@ -1,5 +1,9 @@
 // https://leetcode-cn.com/problems/search-rotate-array-lcci/
-
+/**
+ * @param {number[]} arr
+ * @param {number} target
+ * @return {number}
+ */
 var search = function (arr, target) {
   let left = 0;
   let right = arr.length - 1;

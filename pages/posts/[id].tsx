@@ -1,31 +1,18 @@
-import Head from "next/head";
-import Link from "next/link";
 import Layout from "../../components/Layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { PostDataDTO } from "../../types";
 
 interface Props {
-  postData: {
-    title: string;
-    id: number;
-    date: string;
-    contentHtml: string;
-  };
+  postData: PostDataDTO;
 }
 
 export default function Post(props: Props) {
   const { postData } = props;
   return (
-    <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-
+    <Layout title={postData.title}>
+      <h1> {postData.title}</h1>
       <Date dateString={postData.date} />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </Layout>
@@ -43,6 +30,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Fetch necessary data for the blog post using params.id
   const postData = await getPostData(params?.id);
+  const paths = getAllPostIds();
+  console.log("paths", paths);
   return {
     props: {
       postData,

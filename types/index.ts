@@ -1,7 +1,7 @@
 export interface AllPostsDataDTO {
   title: string;
   id: number;
-  date: string;
+  date: any;
 }
 
 export interface PostDataDTO {

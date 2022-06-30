@@ -60,7 +60,6 @@ git pull --rebase origin master
 git pull -p 删除已经不存在的远程分支
 ```
 
-git push
 git push (-u) origin master
 git push origin --tags --force
 git push origin --all --force
@@ -78,7 +77,6 @@ git add file.txt 把文件添加到仓库
 git status 查看当前仓库状态
 git diff file.txt 查看不同
 
-git reset
 git reset head file.txt
 把暂存区的修改撤销，重新放回工作区
 git reset --hard HEAD^
@@ -88,7 +86,6 @@ git reset --soft HEAD^
 git reset --mixed HEAD^
 不删除工作空间改动代码,撤销 commit,并且撤销 git add . 默认参数
 
-git remote
 git remote add origin git@github.com:username/repname.git
 git remote -v 查看地址
 git remote remove origin

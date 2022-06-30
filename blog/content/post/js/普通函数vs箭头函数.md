@@ -10,9 +10,7 @@ categories: []
 author: "huing"
 ---
 
-this 的区别
-
-arguments 区别
+### this，arguments 区别
 
 ```js
 const funA = () => {

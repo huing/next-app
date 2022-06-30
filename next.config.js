@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ["tsx", "jsx"],
+  /**
+   * todo
+   * 配置了ts才能掉通/api/*
+   * 跟文件读取有关系吧
+   * */
+  pageExtensions: ["ts", "tsx", "jsx"],
   // images: {
   //   domains: ['example.com', 'example2.com'],
   // },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

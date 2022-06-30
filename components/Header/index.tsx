@@ -1,10 +1,30 @@
-import React from 'react';
+import Link from "next/link";
 
-interface PropsDTO {
-	[propsName: string]: any;
-}
+const Header = () => (
+  <header>
+    <ul>
+      <li>
+        <Link href='/post'>
+          <a>Home</a>
+        </Link>
+      </li>
+      <li>
+        <Link href='/post/about'>
+          <a>About</a>
+        </Link>
+      </li>
+      <li>
+        <Link href='/post/[...slug]' as='/post/2020/first-post/with/catch/all/routes'>
+          <a>First Post</a>
+        </Link>
+      </li>
+      <li>
+        <Link href='/post/[...slug]' as='/post/2020/second-post/with/catch/all/routes'>
+          <a>Second Post</a>
+        </Link>
+      </li>
+    </ul>
+  </header>
+);
 
-const Page: React.FC<PropsDTO> = () => {
-	return <div>content</div>;
-};
-export default Page;
+export default Header;

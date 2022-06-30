@@ -16,7 +16,7 @@ const Home: NextPage<{}> = () => {
         <h1 className={styles.title}>
           Learn to <a href='https://nextjs.org'>Next.js!</a>
           Read{" "}
-          <Link href='/posts/first-post'>
+          <Link href='/post/first-post'>
             <a>this page!</a>
           </Link>
         </h1>

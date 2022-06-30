@@ -2,9 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { getSortedPostsData } from "../lib/posts";
 import styles from "../styles/Home.module.css";
-import Date from "../components/date";
 
 const Home: NextPage<{}> = () => {
   return (

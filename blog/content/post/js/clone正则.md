@@ -61,3 +61,10 @@ cloneRegExp(/xyz/gim);
 // ['gim', index: 5, input: '/xyz/gim', groups: undefined]
 
 ```
+
+### 手机号中间四位显示\*
+
+```js
+// $n 代表第n个括号匹配的字符串
+"11122223333".replace(/(\d{3})\d{4}(\d{4})/, "$1****$2");
+```

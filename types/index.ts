@@ -10,3 +10,9 @@ export interface PostDataDTO {
   date: string;
   contentHtml: string;
 }
+
+export type MenuData = {
+  id: number;
+  name: string;
+  children?: MenuData[];
+};

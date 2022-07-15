@@ -1,0 +1,22 @@
+.page-demo {
+  position: relative;
+  height: 100vh;
+  /* background-color: aquamarine; */
+}
+.sider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  overflow: hidden;
+  /* background-color: aqua; */
+}
+.header {
+  margin-left: 200px;
+  /* background-color: antiquewhite; */
+}
+.main-content {
+  margin-left: 200px;
+  /* background-color: red; */
+}
